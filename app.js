@@ -52,7 +52,7 @@ app.use(bodyparser.json());
 app.use(cookieParser());
 
 
-const url = "mongodb+srv://deepti23rajput:complicated123@cluster0.7lh26ez.mongodb.net/backendDb?retryWrites=true&w=majority";
+const url ="mongodb+srv://deepti23rajput:complicated@cluster0.p712ule.mongodb.net/backendDb?retryWrites=true&w=majority";
 
 mongoose
   .connect(url)
@@ -73,15 +73,12 @@ mongoose.connection.on("connect", (err) => {
   console.log("Database is connected...");
 });
 
-// require("./routing")(app);
-// var express = require('express');
-// var app = express();
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
 // listening port
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`app is live at ${PORT}`);
 });
